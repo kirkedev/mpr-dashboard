@@ -9,15 +9,10 @@ export default {
     "globalSetup": "./test/api/setup.ts",
     "globalTeardown": "./test/api/teardown.ts",
     "transform": {
-        "^.+\\.tsx?$": "ts-jest"
+        "^.+\\.ts$": "ts-jest"
     },
-    "testRegex": "^.+spec\\.tsx?$",
-    "moduleFileExtensions": [
-        "ts",
-        "tsx",
-        "js",
-        "jsx"
-    ],
+    "testRegex": "^.+spec\\.ts$",
+    "moduleFileExtensions": ["ts", "js"],
     "collectCoverage": true,
     "collectCoverageFrom": ["<rootDir>/api/**/*.ts"]
 };

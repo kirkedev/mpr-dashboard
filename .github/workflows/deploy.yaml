@@ -34,11 +34,15 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login
-        uses: aws-actions/amazon-ecr-login@v1.3.3
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
       - name: Build docker images
         run: yarn build
         env:
+          DOCKER_BUILDKIT: 1
           ECR_REGISTRY: ${{ steps.login.outputs.registry }}
           TAG: ${{ github.ref_name }}
 

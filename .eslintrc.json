@@ -13,9 +13,10 @@
             "./lib/tsconfig.json",
             "./features/tsconfig.json",
             "./test/tsconfig.json"
-        ]
+        ],
+        "extraFileExtensions": [".svelte"]
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["svelte3", "@typescript-eslint"],
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
@@ -84,16 +85,21 @@
         "@typescript-eslint/space-infix-ops": "error"
     },
     "overrides": [{
-        "files": ["app/**/*.{ts,tsx}"],
+        "files": ["app/**/*.ts"],
+        "env": {
+            "browser": true
+        }
+    }, {
+        "files": ["*.svelte"],
+        "processor": "svelte3/svelte3",
+        "settings": {
+            "svelte3/typescript": true
+        },
         "env": {
             "browser": true
         },
-        "parserOptions": {
-            "ecmaFeatures": {
-                "jsx": true
-            }
-        },
-        "plugins": ["solid"],
-        "extends": ["plugin:solid/recommended"]
+        "rules": {
+            "no-multiple-empty-lines": "off"
+        }
     }]
 }

@@ -24,8 +24,22 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Start app
-        run: yarn dev -d
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-      - name: Run accpetance tests
+      - name: Build app
+        run: yarn build
+        env:
+          DOCKER_BUILDKIT: 1
+
+      - name: Start app
+        run: yarn start -d
+
+      - name: Run acceptance tests
         run: yarn workspace features test
+        env:
+          CYPRESS_BASE_URL: http://localhost
+
+      - name: Shutdown app
+        if: always()
+        run: yarn stop

@@ -10,6 +10,8 @@
         "resolveJsonModule": true,
         "downlevelIteration": true,
         "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "checkJs": true,
         "module": "ESNext",
         "moduleResolution": "node",
         "noEmit": true

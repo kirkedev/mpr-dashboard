@@ -13,7 +13,7 @@ const svgUtilities = (colorObj, colorGroup = "") =>
     }, {});
 
 module.exports = {
-    content: ["index.html", "**/*.tsx", "**/*.css", "**/*.module.css"],
+    content: ["index.html", "**/*.svelte", "**/*.css", "**/*.module.css"],
     plugins: [
         ({ addUtilities, theme }) => addUtilities(svgUtilities(theme("colors")))
     ]

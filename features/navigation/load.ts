@@ -7,7 +7,7 @@ Given("an app", () => {
 });
 
 When("I load the app", () => {
-    cy.visit("/");
+    cy.visit(location);
 });
 
 Then("I see the MPR Dashboard", () => {

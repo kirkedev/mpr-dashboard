@@ -1,13 +1,14 @@
 {
-    "include": ["**/*.ts", "**/*.tsx"],
+    "include": ["**/*.ts", "**/*.svelte"],
     "references": [
         { "path":  "../lib" }
     ],
     "extends": "../tsconfig.json",
     "compilerOptions": {
         "composite": true,
-        "jsx": "preserve",
-        "jsxImportSource": "solid-js",
-        "types": ["vite/client"]
+        "types": [
+            "svelte",
+            "vite/client"
+        ]
     }
 }

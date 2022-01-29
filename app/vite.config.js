@@ -1,16 +1,16 @@
 import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 const { API_URL } = process.env;
 
-export default defineConfig({
-    plugins: [solidPlugin()],
+const config = defineConfig({
+    plugins: [svelte()],
     cacheDir: "../node_modules/.vite",
     build: {
         outDir: "build",
         target: "esnext",
         polyfillDynamicImport: false,
-        sourcemap: "inline"
+        sourcemap: true
     },
     server: {
         proxy: {
@@ -21,3 +21,5 @@ export default defineConfig({
         }
     }
 });
+
+export default config;

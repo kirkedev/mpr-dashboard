@@ -1,6 +1,7 @@
 {
     "name": "app",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "vite --host 0.0.0.0",
         "build": "docker build .. -f Dockerfile -t ${ECR_REGISTRY:-kirkedev}/mpr-app:$TAG"
@@ -12,14 +13,14 @@
         "d3-format": "^3.1.0",
         "d3-scale": "^4.0.2",
         "d3-selection": "^3.0.0",
-        "d3-shape": "^3.0.1",
+        "d3-shape": "^3.1.0",
         "d3-time-format": "^4.1.0",
         "d3-transition": "^3.0.1",
-        "lib": "workspace:*",
-        "solid-app-router": "^0.1.14",
-        "solid-js": "^1.2.6"
+        "lib": "workspace:*"
     },
     "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
+        "@tsconfig/svelte": "^3.0.0",
         "@types/d3-array": "^3.0.2",
         "@types/d3-axis": "^3.0.1",
         "@types/d3-drag": "^3.0.1",
@@ -29,12 +30,15 @@
         "@types/d3-shape": "^3.0.2",
         "@types/d3-time-format": "^4.0.0",
         "@types/d3-transition": "^3.0.1",
-        "autoprefixer": "^10.4.0",
-        "dotenv": "^10.0.0",
+        "autoprefixer": "^10.4.2",
+        "dotenv": "^14.3.2",
         "postcss": "^8.4.5",
-        "tailwindcss": "^3.0.7",
-        "typescript": "^4.5.4",
-        "vite": "^2.7.6",
-        "vite-plugin-solid": "^2.1.4"
+        "svelte": "^3.46.3",
+        "svelte-check": "^2.3.0",
+        "svelte-navigator": "^3.1.5",
+        "svelte-preprocess": "^4.10.2",
+        "tailwindcss": "^3.0.18",
+        "typescript": "^4.5.5",
+        "vite": "^2.7.13"
     }
 }

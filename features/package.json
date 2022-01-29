@@ -11,10 +11,10 @@
         "@types/resolve": "^1.20.1"
     },
     "dependencies": {
-        "cypress": "^9.2.0",
+        "cypress": "^9.3.1",
         "cypress-cucumber-preprocessor": "^4.3.1",
-        "resolve": "^1.20.0",
-        "typescript": "^4.5.4"
+        "resolve": "^1.22.0",
+        "typescript": "^4.5.5"
     },
     "cypress-cucumber-preprocessor": {
         "nonGlobalStepDefinitions": true,

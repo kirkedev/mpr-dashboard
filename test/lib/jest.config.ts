@@ -7,13 +7,10 @@ export default {
         "<rootDir>/test/lib"
     ],
     "transform": {
-        "^.+\\.tsx?$": "ts-jest"
+        "^.+\\.ts$": "ts-jest"
     },
-    "testRegex": "^.+spec\\.tsx?$",
-    "moduleFileExtensions": [
-        "ts",
-        "js"
-    ],
+    "testRegex": "^.+spec\\.ts$",
+    "moduleFileExtensions": ["ts", "js"],
     "collectCoverage": true,
     "collectCoverageFrom": ["<rootDir>/lib/**/*.ts"]
 };
